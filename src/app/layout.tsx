@@ -2,7 +2,21 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import Transition from "../components/Transition";
+import { AnimatePresence, motion } from "framer-motion";
+import { Sora } from "next/font/google";
+
+//font setting
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+});
+
+//components
+import Nav from "../components/Nav";
+import Header from "../components/Header";
+import TopLeftImg from "../components/TopLeftImg";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +30,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <div
+          className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
+        >
+          <TopLeftImg />
+          <Nav />
+          <Header />
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
