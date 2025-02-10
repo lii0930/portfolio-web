@@ -39,18 +39,22 @@ const aboutData: IAboutDataItem[] = [
       {
         title: "Web Development",
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          <FaHtml5 key={1} />,
+          <FaCss3 key={2} />,
+          <FaJs key={3} />,
+          <FaReact key={4} />,
+          <SiNextdotjs key={5} />,
+          <SiFramer key={6} />,
+          <FaWordpress key={7} />,
         ],
       },
       {
         title: "UI/UX Design",
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [
+          <FaFigma key={8} />,
+          <SiAdobexd key={9} />,
+          <SiAdobephotoshop key={10} />,
+        ],
       },
     ],
   },
@@ -103,7 +107,7 @@ const aboutData: IAboutDataItem[] = [
   },
 ];
 
-export default function page() {
+export default function Page() {
   const [index, setIndex] = useState(0);
   return (
     <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
