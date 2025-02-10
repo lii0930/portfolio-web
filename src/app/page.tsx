@@ -60,10 +60,10 @@ export default function page() {
 
           {/* Avatar */}
           <motion.div
-            variants={fadeIn("up", 1)} // Example with direction "up" and delay 0.5
+            variants={fadeUp("up", 1)} // Example with direction "up" and delay 0.5
             initial="hidden"
             animate={{
-              y: [0, 80], // Moving up and down
+              y: [0, -80], // Moving up and down
               opacity: 1, // Keep opacity to 1
               x: 0,
               transition: {
